@@ -6,6 +6,8 @@ import dice
 
 # List of dice to test (other than d100)
 test_list = [4, 6, 8, 10, 12, 20]
+# Should d100 be tested
+test_d100 = True
 
 # Gets number of times to roll each dice to test
 test_iterations = int(input("How many tests for each dice type: "))
@@ -20,12 +22,12 @@ for dice_roll in test_list:
             print("FAILURE")
         else:
             print(str(roll))
-
-for x in range(1,test_iterations):
-    print("d100 roll " + str(x+1) + " of "
-              + str(test_iterations) + ": ", end="")
-    roll = dice.roll_percentile_singular()
-    if roll < 0 or roll > 99:
-        print("FAILURE")
-    else:
-        print(str(roll))
+if test_d100:
+    for x in range(1,test_iterations):
+        print("d100 roll " + str(x+1) + " of "
+                  + str(test_iterations) + ": ", end="")
+        roll = dice.roll_percentile_singular()
+        if roll < 1 or roll > 100:
+            print("FAILURE")
+        else:
+            print(str(roll))
