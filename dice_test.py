@@ -1,8 +1,16 @@
+# dice_test.py
+# Test script for dice.py
+# bitbucket.org/andrewtwelch
+
 import dice
 
+# List of dice to test (other than d100)
 test_list = [4, 6, 8, 10, 12, 20]
+
+# Gets number of times to roll each dice to test
 test_iterations = int(input("How many tests for each dice type: "))
 
+# For each dice in test_list, rolls it test_iterations times and ensures it's a valid roll
 for dice_roll in test_list:
     for x in range(1,test_iterations):
         print("d" + str(dice_roll) + " roll " + str(x) + " of "
