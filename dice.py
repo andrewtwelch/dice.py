@@ -16,7 +16,7 @@ def roll_singular(size):
 # Rolls 2 d10s to make up a d100 roll
 def roll_percentile_singular():
     roll_tens = roll_singular(10) - 1
-    roll_ones = roll_singular(10) - 1
+    roll_ones = roll_singular(10)
     roll_result = (roll_tens * 10) + roll_ones
     return roll_result
 
