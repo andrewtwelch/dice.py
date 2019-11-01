@@ -27,7 +27,7 @@ if test_d100:
         print("d100 roll " + str(x+1) + " of "
                   + str(test_iterations) + ": ", end="")
         roll = dice.roll_percentile_singular()
-        if roll < 1 or roll > 100:
+        if roll < 0 or roll > 99:
             print("FAILURE")
         else:
             print(str(roll))
