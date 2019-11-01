@@ -14,9 +14,10 @@ def roll_singular(size):
     return rolls_temp[selected_roll]
 
 # Rolls 2 d10s to make up a d100 roll
+# Each roll is subtracted by 1 to make them 0-9
 def roll_percentile_singular():
     roll_tens = roll_singular(10) - 1
-    roll_ones = roll_singular(10)
+    roll_ones = roll_singular(10) - 1
     roll_result = (roll_tens * 10) + roll_ones
     return roll_result
 
